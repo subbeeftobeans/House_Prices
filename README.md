@@ -28,7 +28,6 @@
 - **Origin:** Real home sales from Ames, Iowa, compiled by Dean De Cock
 - **Size:** [~1,460 training rows, 79 features]
 - **Target:** `SalePrice` (modeled as `log(SalePrice)`)
-- **Note:** Data files are not included in this repo. Download them from the competition page into `data/`.
 ## Tools
  
 | Purpose | Tool |
@@ -46,7 +45,7 @@
 4. **Feature engineering:** [e.g., total square footage, house age, log-transforming skewed features.]
 5. **Modeling:** Compared [Linear Regression, Ridge/LASSO, Random Forest, Gradient Boosting] using [k-fold cross-validation].
 6. **Kaggle submission:** Submitted predictions for an official score.
-7. **Dashboard:** Built a Power BI report showing [price by neighborhood, top price drivers].
+7. **Dashboard:** Built a Tableau report showing [price by neighborhood, top price drivers].
 ## Results
  
 | Model | CV RMSE (log price) | Notes |
@@ -69,7 +68,7 @@
  
 ```
 housing-price-analysis/
-├── data/                    # not committed; download from Kaggle
+├── data/
 ├── sql/
 │   ├── 01_create_schema.sql
 │   └── 02_exploration_queries.sql
