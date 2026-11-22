@@ -1,4 +1,5 @@
-> **Questions:** (1) What drives home sale prices in Ames, Iowa? (2) How accurately can they be predicted from property features?
+> **Questions:** 1. What drives home sale prices in Ames, Iowa? \
+> 2. How accurately can they be predicted from property features?
  
 [One-sentence summary: what you built, which models, and your headline result. Example: "Predicted sale prices with [model] (RMSE of [X] on log price) and found that [top drivers] explain most of the variation."]
  
@@ -20,7 +21,7 @@
  
 ## Overview
  
-[2-3 sentences: the goal (explain and predict home prices), who would care (buyers, sellers, appraisers, lenders), and the Kaggle competition context.]
+Utilized LASSO and Tree Based Regressor to predict prices of homes using the Kaggle dataset 
  
 ## Dataset
  
@@ -32,20 +33,17 @@
  
 | Purpose | Tool |
 |---|---|
-| Database & querying | PostgreSQL, Postico |
-| Cleaning, EDA & modeling | Python (Pandas, NumPy, Scikit-learn, [Matplotlib / Seaborn]) |
+| Cleaning, EDA & modeling | Python (Pandas, NumPy, Scikit-learn) |
 | Dashboard | Tableau |
 | Version control | Git / GitHub |
  
 ## Process
- 
-1. **SQL exploration:** Loaded `train.csv` into PostgreSQL and profiled the data, including price by `Neighborhood`, `OverallQual`, and `YearBuilt`.
-2. **Cleaning:** Treated "missing means none" columns (e.g., `PoolQC`, `Alley`) per the data description; handled true missing values (e.g., `LotFrontage`) using [method]; reviewed outliers such as [describe].
-3. **EDA:** [Key plots: price distribution, price vs. `GrLivArea`, correlation heatmap.]
-4. **Feature engineering:** [e.g., total square footage, house age, log-transforming skewed features.]
-5. **Modeling:** Compared [Linear Regression, Ridge/LASSO, Random Forest, Gradient Boosting] using [k-fold cross-validation].
-6. **Kaggle submission:** Submitted predictions for an official score.
-7. **Dashboard:** Built a Tableau report showing [price by neighborhood, top price drivers].
+1. **Cleaning:** Treated "missing means none" columns (e.g., `PoolQC`, `Alley`) per the data description; handled true missing values (e.g., `LotFrontage`) using [method]; reviewed outliers such as [describe].
+2. **EDA:** [Key plots: price distribution, price vs. `GrLivArea`, correlation heatmap.]
+3. **Feature engineering:** [e.g., total square footage, house age, log-transforming skewed features.]
+4. **Modeling:** Compared [Linear Regression, Ridge/LASSO, Random Forest, Gradient Boosting] using [k-fold cross-validation].
+5. **Kaggle submission:** Submitted predictions for an official score.
+6. **Dashboard:** Built a Tableau report showing [price by neighborhood, top price drivers].
 ## Results
  
 | Model | CV RMSE (log price) | Notes |
@@ -69,9 +67,6 @@
 ```
 housing-price-analysis/
 ├── data/
-├── sql/
-│   ├── 01_create_schema.sql
-│   └── 02_exploration_queries.sql
 ├── notebooks/
 │   ├── 01_cleaning_eda.ipynb
 │   └── 02_modeling.ipynb
@@ -89,10 +84,8 @@ housing-price-analysis/
    git clone https://github.com/[username]/[repo-name].git
 ```
 2. Download `train.csv` and `test.csv` from the Kaggle competition into `data/`.
-3. Create the database and table with `sql/01_create_schema.sql`, then import the CSV.
-4. Run the queries in `sql/02_exploration_queries.sql`.
-5. Run the notebooks in order.
-6. Open `dashboard/housing_prices.pbix` in Power BI Desktop.
+3. Run the notebooks in order.
+4. Open `dashboard/housing_prices.pbix` in Power BI Desktop.
 ## Author
  
 **Ryleigh Bergmann**
